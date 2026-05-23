@@ -37,8 +37,7 @@ def iniciar_escravo():
             if not pedaco: # Proteção extra: Mestre fechou antes de mandar tudo
                 break
             dados_recebidos += pedaco
-            
-        # Remove a marcação <FIM> antes de converter para JSON
+        
         dados_recebidos = dados_recebidos.replace("<FIM>", "")
         lote_para_processar = json.loads(dados_recebidos)
 
@@ -52,10 +51,8 @@ def iniciar_escravo():
     except ConnectionRefusedError:
         print("[ESCRAVO] O Mestre não está online.")
     except ConnectionResetError:
-        # TRATAMENTO ADICIONADO AQUI
         print("[ESCRAVO] Fila esgotada! O Mestre encerrou a conexão antes de enviar os dados.")
     except json.decoder.JSONDecodeError:
-        # TRATAMENTO CASO RECEBA VAZIO
         print("[ESCRAVO] Não recebi dados válidos. O lote provavelmente acabou.")
     finally:
         cliente.close()
