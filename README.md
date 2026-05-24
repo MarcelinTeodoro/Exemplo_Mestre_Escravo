@@ -48,5 +48,3 @@ O terminal do Mestre irá registar em tempo real as conexões, o despacho dos lo
 
 
 ***
-
-Este `README.md` oferece um nível de detalhe fantástico para qualquer professor ou colega que vá avaliar o código, documentando as soluções avançadas (como o uso do delimitador `<FIM>` para os 64kb e o `SO_REUSEADDR`) que implementámos durante a resolução dos erros de terminal! Pode utilizar exatamente assim.
